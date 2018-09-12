@@ -1,0 +1,13 @@
+*~
+__pycache__
+myvenv
+db.sqlite3
+/static
+# See the name for you IDE
+.idea/
+# Name of your virtuan env
+.vEnv
+*.pyc
+# .env #se não fosse um app de teste isso não estaria comentado
+
+.DS_Store

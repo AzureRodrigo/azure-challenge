@@ -1,0 +1,111 @@
+.title {
+    font-size: 30px;
+    margin-top: 50px;
+}
+
+.header {
+    margin-top: 50px;
+}
+
+.config_body {
+    background-color: #EEE;
+}
+
+form {
+  background-color: #DDD;
+  color: #F28F36;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  min-width: 350px;
+  border-radius: 10px;
+  box-shadow:
+      0 0 0 2px #fa641b,
+      0 0 0 4px #fe9e3b,
+      0 0 0 5px #e43e10;
+}
+
+.container-form {
+    padding-top: 10px;
+    padding-bottom: 0px;
+    max-width: 500px;
+}
+
+select, input[type=text], input[type=email], input[type=number], input[type=password],
+select:focus, input[type=text]:focus, input[type=email]:focus, input[type=number]:focus, input[type=password]:focus {
+    margin-top: 15px !important;
+    width: 80%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 2px solid #B51515;
+    background-color: transparent;
+    box-sizing: border-box;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 15px;
+    color: #F28F36 !important;
+    background-color: #EEE
+}
+
+select {
+    height: 50px;
+}
+
+select:focus, input[type=text]:focus, input[type=email]:focus, input[type=number]:focus, input[type=password]:focus {
+  outline: none;
+  box-shadow:
+  0 0 0 .5px #fa641b,
+  0 0 0 1px #fe9e3b,
+  0 0 0 1.5px #e43e10;
+  color: #F28F36 !important;
+}
+
+select::-webkit-input-placeholder, input[type=text]::-webkit-input-placeholder, input[type=email]::-webkit-input-placeholder,
+input[type=number]:-webkit-input-placeholder, input[type=password]::-webkit-input-placeholder {
+  text-align: center;
+  color: #F28F36;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+    color: #F28F36 !important;
+    -webkit-text-fill-color: #F28F36 !important;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+button:hover {
+    opacity: 0.6;
+}
+
+.buttonConfirm {
+  margin-top: 45px !important;
+  margin-bottom: 45px !important;
+  background-color: transparent;
+  min-width: 150px !important;
+  min-height: 50px;
+  box-shadow:
+    0 0 0 2px #fa641b,
+    0 0 0 3px #fe9e3b,
+    0 0 0 4px #e43e10;
+ font-size:20px;
+ -webkit-text-fill-color: #F28F36;
+ -webkit-text-stroke:1px #D66B36
+}
+
+.messageAlert {
+    color: red;
+    font-size: 20px;
+}

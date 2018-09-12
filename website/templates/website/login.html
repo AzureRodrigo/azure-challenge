@@ -1,0 +1,22 @@
+{% extends 'website/base.html' %}
+
+{% block title %}
+        <title>Login</title>
+{% endblock %}
+
+{% block header %}
+{% endblock header %}
+
+{% block content %}
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 header" align="center">
+        <form method="post" class="container-form">
+            <h1>Login</h1>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="buttonConfirm">Logar</button>
+        </form>
+        {% if error_message %}
+            <span class="messageAlert" >{{ error_message }}</span>
+        {% endif %}
+    </div>
+{% endblock content %}
