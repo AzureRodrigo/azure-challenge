@@ -1,5 +1,4 @@
-from django.http import HttpResponseRedirect
-from django.shortcuts import render, reverse, redirect
+from django.shortcuts import render, redirect
 from django.views.generic import TemplateView
 from django.contrib.auth import authenticate, login
 
@@ -23,7 +22,6 @@ class ViewLoginMail(TemplateView):
                 if user.is_active:
                     login(self.request, user)
                     return redirect('/api')
-                    # return HttpResponseRedirect(reverse('api'))
             else:
                 return render(self.request, 'website/login.html', {'error_message': 'Credenciais inválidas!',
                                                                    'form': form})

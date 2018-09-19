@@ -3,8 +3,8 @@ from rest_framework.response import Response
 from rest_framework.authentication import SessionAuthentication
 from rest_framework.permissions import IsAuthenticated
 
-from website.models import Register
-from website.api.serializers import RegisterSerializer
+from api.models import Register
+from api.serializers import RegisterSerializer
 
 
 class GetRegisterView(viewsets.ModelViewSet):

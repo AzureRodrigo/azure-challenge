@@ -1,8 +1,8 @@
 from rest_framework import serializers
 from django.core.validators import MinValueValidator
 
-from website.models import Register, EntryType
-from . import fields
+from api.models import Register, EntryType
+from api import fields
 
 
 # Serializer dos registros

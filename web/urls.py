@@ -3,8 +3,8 @@ from django.urls import path, include
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from rest_framework import routers
 
-from website.views.views_login import *
-from website.views.views_api import *
+from website.views import ViewLoginMail
+from api.views import *
 
 
 router = routers.DefaultRouter()
