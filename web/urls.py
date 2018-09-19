@@ -1,10 +1,23 @@
 from django.contrib import admin
-from django.urls import path
-from website.api.views import RegisterView
-from website.views import ViewLoginMail
+from django.urls import path, include
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from rest_framework import routers
+
+from website.views.views_login import *
+from website.views.views_api import *
+
+
+router = routers.DefaultRouter()
+
+router.register(r'get_registers', GetRegisterView, 'get')
+router.register(r'post_registers', PostRegisterView, 'post')
+
 
 urlpatterns = [
     path('', ViewLoginMail.as_view(), name="login"),
-    path('registers/', RegisterView.as_view(), name="registers"),
-    path('admin/', admin.site.urls, name="registers"),
+    path('api/', include((router.urls, 'api'), namespace='api')),
+    path('admin/', admin.site.urls, name="admin"),
 ]
+
+
+urlpatterns += staticfiles_urlpatterns()
