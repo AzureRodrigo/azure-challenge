@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
+import sys
+
 from decouple import config
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -26,7 +28,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['azure-challenge.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['challenge-azure.herokuapp.com', '127.0.0.1']
 
 # Application definition
 DEFAULT_APPS = [
@@ -40,6 +42,7 @@ DEFAULT_APPS = [
 
 THIRD_PARTY_APPS = [
     'rest_framework',
+    'rest_framework.authtoken',
 ]
 
 LOCAL_APPS = [
@@ -85,15 +88,23 @@ WSGI_APPLICATION = 'web.wsgi.application'
 
 DATABASES = {
     'default': {
+        'TEST': {
+            'NAME': 'd52q6rdb2ca3c3_test',
+        },
         'ENGINE': 'django.db.backends.postgresql',
         'HOST': 'ec2-54-83-59-144.compute-1.amazonaws.com',
         'NAME': 'd52q6rdb2ca3c3',
         'USER': 'kksxrlkxhfkflj',
         'PASSWORD': 'b2d21ea3a92da7e9dc42a56b490c4dfc0170efc4d0902351c4deeefc733cbf67',
         'PORT': '5432',
+
+# GRANT CONNECT ON DATABASE d52q6rdb2ca3c3 TO kksxrlkxhfkflj;
+# GRANT USAGE ON SCHEMA public TO kksxrlkxhfkflj;
+# GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO kksxrlkxhfkflj;
+# GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO kksxrlkxhfkflj;
+# ALTER USER kksxrlkxhfkflj WITH SUPERUSER;
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
@@ -135,6 +146,16 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+
+    ),
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.AllowAny',
+        'rest_framework.permissions.IsAuthenticatedOrReadOnly',
+        'rest_framework.permissions.IsAdminUser',
+    ),
     'DEFAULT_FILTER_BACKENDS': (
         'django_filters.rest_framework.DjangoFilterBackend',
     ),

@@ -29,4 +29,5 @@ class RegisterSerializer(serializers.ModelSerializer):
         is_entry = validated_data['type'].value
         if not is_entry:
             cost = cost * -1
+
         return Register.objects.create(name=name, cost=float(cost), type=is_entry)

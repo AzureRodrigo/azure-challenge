@@ -3,7 +3,7 @@ from django.urls import path, include
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from rest_framework import routers
 
-from website.views import ViewLoginMail
+from website.views import ViewLoginMail, view_login_index
 from api.views import *
 
 
@@ -15,6 +15,7 @@ router.register(r'post_registers', PostRegisterView, 'post')
 
 urlpatterns = [
     path('', ViewLoginMail.as_view(), name="login"),
+    path('index/', view_login_index, name="index"),
     path('api/', include((router.urls, 'api'), namespace='api')),
     path('admin/', admin.site.urls, name="admin"),
 ]

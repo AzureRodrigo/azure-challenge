@@ -90,7 +90,17 @@ button:hover {
     opacity: 0.6;
 }
 
-.buttonConfirm {
+.aConfirm {
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 30px;
+     -webkit-text-fill-color: #F28F36;
+     -webkit-text-stroke:1px #D66B36
+}
+
+.buttonConfirm  {
   margin-top: 45px !important;
   margin-bottom: 45px !important;
   background-color: transparent;

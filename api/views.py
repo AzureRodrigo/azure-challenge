@@ -1,6 +1,6 @@
 from rest_framework import status, viewsets
 from rest_framework.response import Response
-from rest_framework.authentication import SessionAuthentication
+from rest_framework.authentication import SessionAuthentication, TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
 
 from api.models import Register
@@ -9,7 +9,7 @@ from api.serializers import RegisterSerializer
 
 class GetRegisterView(viewsets.ModelViewSet):
     # só exibe os dados caso usuário esteja autenticado e autorizado
-    authentication_classes = (SessionAuthentication,)
+    authentication_classes = (SessionAuthentication, TokenAuthentication)
     permission_classes = (IsAuthenticated,)
 
     # serializa os dados
@@ -19,16 +19,15 @@ class GetRegisterView(viewsets.ModelViewSet):
 
     # função responsavel por buscar os registros e serializar
     def get(self, request, format=None):
-
         queryset = Register.objects.all()
-
         serializer = self.serializer_class(request, queryset, self, many=True)
+
         return Response(serializer.data, status=status.HTTP_200_OK)
 
 
 class PostRegisterView(viewsets.ModelViewSet):
     # só exibe os dados caso usuário esteja autenticado e autorizado
-    authentication_classes = (SessionAuthentication,)
+    authentication_classes = (SessionAuthentication, TokenAuthentication)
     permission_classes = (IsAuthenticated,)
 
     # serializa os dados
