@@ -23,7 +23,6 @@ django-model-utils==3.1.2
 django-postgres-pebble==0.0.6
 django-rest-auth==0.9.3
 djangorestframework==3.8.2
-gunicorn==19.9.0
 httpie==0.9.9
 idna==2.7
 lxml==4.2.5
@@ -31,7 +30,6 @@ Markdown==2.6.11
 oauthlib==2.1.0
 patterns==0.3
 pipenv==2018.5.18
-psycopg2==2.7.5
 psycopg2-binary==2.7.5
 pycparser==2.18
 Pygments==2.2.0
