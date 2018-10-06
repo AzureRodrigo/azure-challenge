@@ -92,10 +92,10 @@ DATABASES = {
             'NAME': 'd52q6rdb2ca3c3_test',
         },
         'ENGINE': 'django.db.backends.postgresql',
-        'HOST': 'ec2-54-83-59-144.compute-1.amazonaws.com',
-        'NAME': 'd52q6rdb2ca3c3',
-        'USER': 'kksxrlkxhfkflj',
-        'PASSWORD': 'b2d21ea3a92da7e9dc42a56b490c4dfc0170efc4d0902351c4deeefc733cbf67',
+        'HOST': 'ec2-107-21-95-70.compute-1.amazonaws.com',
+        'NAME': 'dfbs5bgf1miksv',
+        'USER': 'iqsndrytqtrfmu',
+        'PASSWORD': 'b1690ba672179fb37ff6a3f83532b07c6710b6ca7474195f8ae56ad0ba6d3ba0',
         'PORT': '5432',
 
 # GRANT CONNECT ON DATABASE d52q6rdb2ca3c3 TO kksxrlkxhfkflj;
